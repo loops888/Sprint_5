@@ -9,8 +9,8 @@ class TestLogin:
     """
     def test_login_from_login_button_authorized_transition_to_main_page(self, driver):
         driver.find_element(*Locators.LOGIN_BUTTON).click()
-        driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.TEST_MAIL)
-        driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.TEST_PASS_CORRECT)
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_MAIL)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.TEST_PASS_CORRECT)
         driver.find_element(*Locators.ENTER_BUTTON).click()
         assert driver.find_element(*Locators.MAIN_PAGE).is_displayed()
 
@@ -19,8 +19,8 @@ class TestLogin:
     """
     def test_login_from_personal_account_authorized_transition_to_main_page(self, driver):
         driver.find_element(*Locators.PERSONAL_ACCOUNT_LINK).click()
-        driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.TEST_MAIL)
-        driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.TEST_PASS_CORRECT)
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_MAIL)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.TEST_PASS_CORRECT)
         driver.find_element(*Locators.ENTER_BUTTON).click()
         assert driver.find_element(*Locators.MAIN_PAGE).is_displayed()
 
@@ -31,8 +31,8 @@ class TestLogin:
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         driver.find_element(*Locators.REG_LINK).click()
         driver.find_element(*Locators.LOGIN_LINK).click()
-        driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.TEST_MAIL)
-        driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.TEST_PASS_CORRECT)
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_MAIL)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.TEST_PASS_CORRECT)
         driver.find_element(*Locators.ENTER_BUTTON).click()
         assert driver.find_element(*Locators.MAIN_PAGE).is_displayed()
 
@@ -43,7 +43,7 @@ class TestLogin:
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         driver.find_element(*Locators.PASSWORD_RECOVERY_LINK).click()
         driver.find_element(*Locators.LOGIN_LINK).click()
-        driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.TEST_MAIL)
-        driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.TEST_PASS_CORRECT)
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_MAIL)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.TEST_PASS_CORRECT)
         driver.find_element(*Locators.ENTER_BUTTON).click()
         assert driver.find_element(*Locators.MAIN_PAGE).is_displayed()

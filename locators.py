@@ -3,19 +3,19 @@ from selenium.webdriver.common.by import By
 
 class Locators:
     # Ссылка на вход в "Личный Кабинет".
-    PERSONAL_ACCOUNT_LINK = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/header[1]/nav[1]/a[1]")
+    PERSONAL_ACCOUNT_LINK = (By.LINK_TEXT, "Личный Кабинет")
     # Ссылка "Зарегистрироваться".
     REG_LINK = (By.LINK_TEXT, 'Зарегистрироваться')
     # Ссылка "Восстановить пароль".
     PASSWORD_RECOVERY_LINK = (By.LINK_TEXT, "Восстановить пароль")
     # Главная страница сайта.
-    MAIN_PAGE = (By.XPATH, "//body/div[@id='root']/div[1]/main[1]")
+    MAIN_PAGE = (By.CLASS_NAME, "App_App__aOmNj")
     # Окно для авторизации пользователей.
-    LOGIN_WINDOW = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]")
+    LOGIN_WINDOW = (By.XPATH, "//button[contains(text(),'Войти')]")
     # Информация о пользователе из его личного кабинета.
-    PERSONAL_INFO_PAGE = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/nav[1]/ul[1]")
+    PERSONAL_INFO = (By.CLASS_NAME, "Account_contentBox__2CPm3")
     # Конструктор "Соберите бургер".
-    CONSTRUCTOR_SECTION = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]")
+    CONSTRUCTOR_SECTION = (By.CLASS_NAME, "BurgerIngredients_ingredients__1N8v2")
     # Кнопка "Войти в  аккаунт" в главном окне.
     LOGIN_BUTTON = (By.XPATH, "//button[contains(text(),'Войти в аккаунт')]")
     # Кнопка "Войти" в окне авторизации.
@@ -23,27 +23,23 @@ class Locators:
     # Кнопка "Выход" из личного кабинета пользователя.
     EXIT_ACCOUNT_BUTTON = (By.XPATH, "//button[contains(text(),'Выход')]")
     # Кнопка "Зарегистрироваться" из формы Регистрации.
-    REGISTER_BUTTON = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/button[1]")
+    REGISTER_BUTTON = (By.XPATH, "//button[contains(text(),'Зарегистрироваться')]")
     # Ссылка "Войти" из окна регистрации.
-    LOGIN_LINK = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/p[1]/a[1]")
+    LOGIN_LINK = (By.XPATH, "//a[contains(text(),'Войти')]")
     # Ссылка "Восстановить пароль" из окна авторизации.
-    ENTER_FROM_RECOVERY = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/p[2]/a[1]")
+    ENTER_FROM_RECOVERY = (By.XPATH, "//a[contains(text(),'Восстановить пароль')]")
     # Поле для ввода Имени из окна регистрации.
-    NAME_FIELD_REG = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/input[1]")
+    NAME_FIELD = (By.XPATH, ".//label[text()='Имя']/following-sibling::input[@type='text']")
     # Поле для ввода Почты из окна регистрации.
-    EMAIL_FIELD_REG = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[2]/div[1]/div[1]/input[1]")
+    EMAIL_FIELD = (By.XPATH, ".//label[text()='Email']/following-sibling::input[@type='text']")
     # Поле для ввода Пароля из окна регистрации.
-    PASSWORD_FIELD_REG = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[3]/div[1]/div[1]/input[1]")
-    # Поле для ввода Почты из окна авторизации.
-    EMAIL_FIELD_LOG = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/input[1]")
-    # Поле для ввода Пароля из окна авторизации.
-    PASSWORD_FIELD_LOG = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[2]/div[1]/div[1]/input[1]")
-    # Сообщение о некорректном пароле.
-    INCORRECT_PASSWORD_MESSAGE = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[3]/div[1]/p[1]")
+    PASSWORD_FIELD = (By.XPATH, ".//label[text()='Пароль']/following-sibling::input[@type='password']")
+    # Надпись "Некорректный пароль".
+    INCORRECT_PASSWORD_MESSAGE = (By.XPATH, "//p[contains(text(),'Некорректный пароль')]")
     # Кнопка "Конструктор".
-    CONSTRUCTOR_BUTTON = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/header[1]/nav[1]/ul[1]/li[1]/a[1]/p[1]")
+    CONSTRUCTOR_BUTTON = (By.LINK_TEXT, "Конструктор")
     # Логотип Stellar Burgers.
-    BURGER_LOGO = (By.XPATH, "//header/nav[1]/div[1]/a[1]/*[1]")
+    BURGER_LOGO = (By.CLASS_NAME, "AppHeader_header__logo__2D0X2")
     # Выбор раздела "Бургер".
     ROLLS_SELECTOR = (By.XPATH, "//span[contains(text(),'Булки')]")
     # Выбор раздела "Соусы".
@@ -51,8 +47,8 @@ class Locators:
     # Выбор раздела "Начинки".
     FILLINGS_SELECTOR = (By.XPATH, "//span[contains(text(),'Начинки')]")
     # Раздел с булками.
-    ROLLS_SECTION = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]/div[2]/ul[1]")
+    ROLLS_SECTION = (By.XPATH, ".//span[text()='Булки']/ancestor::div[1]")
     # Раздел с соусами.
-    SAUCES_SECTION = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]/div[2]/ul[2]")
+    SAUCES_SECTION = (By.XPATH, ".//span[text()='Соусы']/ancestor::div[1]")
     # Раздел с начинками.
-    FILLINGS_SECTION = (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]/div[2]/ul[3]")
+    FILLINGS_SECTION = (By.XPATH, ".//span[text()='Начинки']/ancestor::div[1]")
